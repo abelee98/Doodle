@@ -14,6 +14,7 @@
 		CBF9E7B821EE8CD100180272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF9E7B621EE8CD100180272 /* LaunchScreen.storyboard */; };
 		CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */; };
 		CBF9E7C921EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */; };
+		CBF9E7CD21EF887700180272 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7CC21EF887700180272 /* ProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		CBF9E7B921EE8CD100180272 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCExtension+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCExtension+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		CBF9E7CC21EF887700180272 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */,
 				CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */,
 				CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */,
+				CBF9E7CC21EF887700180272 /* ProfileCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */,
 				CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */,
 				CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */,
+				CBF9E7CD21EF887700180272 /* ProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

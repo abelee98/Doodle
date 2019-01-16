@@ -14,7 +14,7 @@ import UIKit
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var friends: UILabel!
+    @IBOutlet weak var friend: UILabel!
     @IBOutlet weak var doodles: UILabel!
     @IBOutlet weak var edited: UILabel!
     @IBOutlet weak var userDoodles: UICollectionView!
@@ -23,6 +23,9 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        // have to define the datasource and delegate 
+        userDoodles.dataSource = self
+        userDoodles.delegate = self
         profileImage.layer.cornerRadius = 75
         profileImage.layer.masksToBounds = false
         profileImage.clipsToBounds = true
