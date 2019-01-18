@@ -10,6 +10,7 @@
 		CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377821EFC7F6002050F8 /* HomeCell.swift */; };
 		CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377C21F12888002050F8 /* DrawViewController.swift */; };
 		CB38377F21F140A6002050F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377E21F140A6002050F8 /* SettingsViewController.swift */; };
+		CBEE33E021F2936B00AD7447 /* PencilColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE33DF21F2936B00AD7447 /* PencilColor.swift */; };
 		CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7AD21EE8CCF00180272 /* AppDelegate.swift */; };
 		CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */; };
 		CBF9E7B321EE8CCF00180272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF9E7B121EE8CCF00180272 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		CB38377821EFC7F6002050F8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		CB38377C21F12888002050F8 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		CB38377E21F140A6002050F8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CBEE33DF21F2936B00AD7447 /* PencilColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilColor.swift; sourceTree = "<group>"; };
 		CBF9E7AA21EE8CCF00180272 /* Doodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF9E7AD21EE8CCF00180272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				CBF9E7AD21EE8CCF00180272 /* AppDelegate.swift */,
 				CBF9E7B921EE8CD100180272 /* Info.plist */,
+				CBEE33DF21F2936B00AD7447 /* PencilColor.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			files = (
 				CBF9E7D921EFB2D400180272 /* HVCExtension-TableViewDelegate.swift in Sources */,
 				CBF9E7C921EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift in Sources */,
+				CBEE33E021F2936B00AD7447 /* PencilColor.swift in Sources */,
 				CB38377F21F140A6002050F8 /* SettingsViewController.swift in Sources */,
 				CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */,
 				CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */,
