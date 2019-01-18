@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377821EFC7F6002050F8 /* HomeCell.swift */; };
+		CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377C21F12888002050F8 /* DrawViewController.swift */; };
+		CB38377F21F140A6002050F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377E21F140A6002050F8 /* SettingsViewController.swift */; };
 		CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7AD21EE8CCF00180272 /* AppDelegate.swift */; };
 		CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */; };
 		CBF9E7B321EE8CCF00180272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF9E7B121EE8CCF00180272 /* Main.storyboard */; };
@@ -15,9 +18,15 @@
 		CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */; };
 		CBF9E7C921EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */; };
 		CBF9E7CD21EF887700180272 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7CC21EF887700180272 /* ProfileCell.swift */; };
+		CBF9E7D521EFB21400180272 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D421EFB21400180272 /* HomeViewController.swift */; };
+		CBF9E7D721EFB27700180272 /* HVCExtension-TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */; };
+		CBF9E7D921EFB2D400180272 /* HVCExtension-TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB38377821EFC7F6002050F8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		CB38377C21F12888002050F8 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
+		CB38377E21F140A6002050F8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		CBF9E7AA21EE8CCF00180272 /* Doodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF9E7AD21EE8CCF00180272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +37,9 @@
 		CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCExtension+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCExtension+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CBF9E7CC21EF887700180272 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		CBF9E7D421EFB21400180272 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HVCExtension-TableViewDataSource.swift"; sourceTree = "<group>"; };
+		CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HVCExtension-TableViewDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +108,16 @@
 		CBF9E7C221EE8D0A00180272 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CBF9E7D421EFB21400180272 /* HomeViewController.swift */,
 				CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */,
 				CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */,
 				CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */,
 				CBF9E7CC21EF887700180272 /* ProfileCell.swift */,
+				CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */,
+				CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */,
+				CB38377821EFC7F6002050F8 /* HomeCell.swift */,
+				CB38377C21F12888002050F8 /* DrawViewController.swift */,
+				CB38377E21F140A6002050F8 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -184,11 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF9E7D921EFB2D400180272 /* HVCExtension-TableViewDelegate.swift in Sources */,
 				CBF9E7C921EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift in Sources */,
+				CB38377F21F140A6002050F8 /* SettingsViewController.swift in Sources */,
+				CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */,
 				CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */,
 				CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */,
 				CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */,
+				CBF9E7D721EFB27700180272 /* HVCExtension-TableViewDataSource.swift in Sources */,
+				CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */,
 				CBF9E7CD21EF887700180272 /* ProfileCell.swift in Sources */,
+				CBF9E7D521EFB21400180272 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +358,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84ZPW9L46G;
 				INFOPLIST_FILE = "Doodle/Supporting Files/Info.plist";
@@ -343,6 +368,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = abelee.Doodle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -352,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 84ZPW9L46G;
 				INFOPLIST_FILE = "Doodle/Supporting Files/Info.plist";
@@ -361,6 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = abelee.Doodle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

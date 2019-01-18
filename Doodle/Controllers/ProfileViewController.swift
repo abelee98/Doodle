@@ -30,5 +30,13 @@ class ProfileViewController: UIViewController {
         profileImage.layer.masksToBounds = false
         profileImage.clipsToBounds = true
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let navController = segue.destination as? UINavigationController,
+            let settingsController = navController.topViewController as? DrawViewController else {
+                return
+        }
+        print("in segue")
+    }
 }
 
