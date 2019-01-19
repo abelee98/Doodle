@@ -8,11 +8,8 @@
 
 import UIKit
 
-protocol DrawViewControllerDelegate: class {
-    func drawViewControllerFinished(_ drawViewController: DrawViewController)
-}
-
-class DrawViewController: UIViewController {
+class DrawViewController: UIViewController{
+    
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     
@@ -23,8 +20,6 @@ class DrawViewController: UIViewController {
     var brushWidth: CGFloat = 10.0
     var opacity: CGFloat = 1.0
     var swiped = false
-    
-    weak var delegate: DrawViewControllerDelegate?
     
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
         UIGraphicsBeginImageContext(view.frame.size)
@@ -85,7 +80,6 @@ class DrawViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        print("pressed one")
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
@@ -96,5 +90,19 @@ class DrawViewController: UIViewController {
     @IBAction func undoPressed(_ sender: Any) {
         guard let prev = prevImageView.popLast() else { return }
         mainImageView.image = prev.image
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let settings = segue.destination as? SettingsViewController else { return }
+        settings.delegate = self
+    }
+    
+}
+
+extension DrawViewController: SettingsBackButtonDelegate {
+    func settingsSaved(newColor: UIColor, newBrush: CGFloat, newOpacity: CGFloat) {
+        brushWidth = newBrush
+        opacity = newOpacity
+        color = newColor
     }
 }
