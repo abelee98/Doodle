@@ -8,8 +8,10 @@
 
 import UIKit
 
+// Defined this to help get information back to the main drawing screen.
+// First define a new protocol as such with the info you want to pass back
 protocol SettingsBackButtonDelegate: class {
-    func settingsSaved (newColor: UIColor, newBrush: CGFloat, newOpacity: CGFloat)
+    func settingsSaved (newColor: UIColor, newBrush: CGFloat)
 }
 
 class SettingsViewController: UIViewController {
@@ -19,6 +21,7 @@ class SettingsViewController: UIViewController {
     var green: CGFloat = 0.0
     var blue: CGFloat = 0.0
     
+    // Second, define the delegate in the second view controller
     weak var delegate: SettingsBackButtonDelegate?
     
     @IBOutlet weak var penSizeSlider: UISlider!
@@ -40,10 +43,8 @@ class SettingsViewController: UIViewController {
     
 
     @IBAction func colorPressed(_ sender: UIButton) {
-        print(sender.tag)
         guard let pencil = Pencil(tag: sender.tag) else { return }
         let color = pencil.color
-        print("button presesd")
         red = color.0
         green = color.1
         blue = color.2
@@ -60,7 +61,7 @@ class SettingsViewController: UIViewController {
     }
     @IBAction func opacityChanged(_ sender: UISlider) {
         opacity = CGFloat(sender.value)
-        opacityValue.text = String(format: "%1.f", opacity/1.0)
+        opacityValue.text = String(format: "%2.f", opacity/1.0)
         drawPreview()
     }
     @IBAction func redChanged(_ sender: UISlider) {
@@ -93,10 +94,11 @@ class SettingsViewController: UIViewController {
         UIGraphicsEndImageContext()
     }
     
+    // This was used to identify when the back button was pressed
+    // Use the delegate's new method as defined above
     override func didMove(toParent parent: UIViewController?) {
         if parent == nil {
-            print("lhljlj")
-            delegate?.settingsSaved(newColor: UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: opacity/1.0), newBrush: brush, newOpacity: opacity)
+            delegate?.settingsSaved(newColor: UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: opacity/1.0), newBrush: brush)
         }
     }
 }
