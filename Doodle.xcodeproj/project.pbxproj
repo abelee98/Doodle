@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377821EFC7F6002050F8 /* HomeCell.swift */; };
 		CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377C21F12888002050F8 /* DrawViewController.swift */; };
-		CB38377F21F140A6002050F8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377E21F140A6002050F8 /* SettingsViewController.swift */; };
+		CB39C12421F55CFE00BE2D5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */; };
 		CBEE33E021F2936B00AD7447 /* PencilColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE33DF21F2936B00AD7447 /* PencilColor.swift */; };
 		CBEE33E421F386FC00AD7447 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE33E321F386FC00AD7447 /* ColorView.swift */; };
 		CBEE33E621F3E17500AD7447 /* DVCExtension+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEE33E521F3E17500AD7447 /* DVCExtension+CollectionViewDelegate.swift */; };
@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		CB38377821EFC7F6002050F8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		CB38377C21F12888002050F8 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
-		CB38377E21F140A6002050F8 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CBEE33DF21F2936B00AD7447 /* PencilColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PencilColor.swift; sourceTree = "<group>"; };
 		CBEE33E321F386FC00AD7447 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		CBEE33E521F3E17500AD7447 /* DVCExtension+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DVCExtension+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
@@ -124,9 +124,9 @@
 				CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */,
 				CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */,
 				CB38377C21F12888002050F8 /* DrawViewController.swift */,
-				CB38377E21F140A6002050F8 /* SettingsViewController.swift */,
 				CBEE33E521F3E17500AD7447 /* DVCExtension+CollectionViewDelegate.swift */,
 				CBEE33E721F3E1C800AD7447 /* DVCExtension+CollectionViewDataSource.swift */,
+				CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,8 +217,8 @@
 				CBF9E7D921EFB2D400180272 /* HVCExtension-TableViewDelegate.swift in Sources */,
 				CBF9E7C921EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift in Sources */,
 				CBEE33E021F2936B00AD7447 /* PencilColor.swift in Sources */,
+				CB39C12421F55CFE00BE2D5D /* LoginViewController.swift in Sources */,
 				CBEE33E421F386FC00AD7447 /* ColorView.swift in Sources */,
-				CB38377F21F140A6002050F8 /* SettingsViewController.swift in Sources */,
 				CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */,
 				CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */,
 				CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */,

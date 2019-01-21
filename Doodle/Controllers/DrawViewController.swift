@@ -38,7 +38,7 @@ class DrawViewController: UIViewController {
     
     var lastPoint = CGPoint.zero
     var color = UIColor.black
-    var brushWidth: CGFloat = 10.0
+    var brushWidth: CGFloat = 15.0
     var opacity: CGFloat = 1.0
     var swiped = false
     var red: CGFloat = 0.0
@@ -126,6 +126,7 @@ class DrawViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func colorPressed(_ sender: Any) {
+        drawPreview(image: pencilImageView)
         if colorViewConstraint.constant == -400 {
             colorViewConstraint.constant = 50
         } else {
@@ -138,6 +139,7 @@ class DrawViewController: UIViewController {
         }, completion: nil)
     }
     @IBAction func eraserPressed(_ sender: Any) {
+        drawPreview(image: eraserImageView)
         if eraserConstraint.constant == -300 {
             eraserConstraint.constant = 0
         } else {
@@ -150,6 +152,7 @@ class DrawViewController: UIViewController {
         }, completion: nil)
     }
     @IBAction func pencilPressed(_ sender: Any) {
+        drawPreview(image: pencilWidthImageView)
         if pencilSettingsConstraint.constant == -350 {
             pencilSettingsConstraint.constant = 0
         } else {
@@ -181,14 +184,16 @@ class DrawViewController: UIViewController {
         drawPreview(image: pencilImageView)
     }
     @IBAction func eraserChanged(_ sender: UISlider) {
-        eraserLabel.text = String(format: "%1.f", sender.value)
-        color = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1/1.0)
-        drawPreview(image: eraserImageView, pencilWidth: CGFloat(sender.value))
+        brushWidth = CGFloat(sender.value)
+        eraserLabel.text = String(format: "%1.f", brushWidth)
+        color = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 1/1.0)
+        drawPreview(image: eraserImageView)
     }
     @IBAction func pencilWidthChanged(_ sender: UISlider) {
-        pencilWidthLabel.text = String(format: "%1.f", sender.value)
+        brushWidth = CGFloat(sender.value)
+        pencilWidthLabel.text = String(format: "%1.f", brushWidth)
         color = UIColor(red: red/255.0, green: green/255.0, blue: blue/255.0, alpha: opacity/1.0)
-        drawPreview(image: pencilWidthImageView, pencilWidth: CGFloat(sender.value))
+        drawPreview(image: pencilWidthImageView)
     }
     @IBAction func opacityChanged(_ sender: UISlider) {
         opacity = CGFloat(sender.value)
@@ -197,13 +202,13 @@ class DrawViewController: UIViewController {
         drawPreview(image: pencilWidthImageView)
     }
     
-    func drawPreview(image: UIImageView, pencilWidth: CGFloat = 30.0) {
+    func drawPreview(image: UIImageView) {
         UIGraphicsBeginImageContext(image.frame.size)
         guard let context = UIGraphicsGetCurrentContext() else { return }
         let width = image.frame.width
         let height = image.frame.height
         context.setLineCap(.round)
-        context.setLineWidth(pencilWidth)
+        context.setLineWidth(brushWidth)
         context.setStrokeColor(color.cgColor)
         context.move(to: CGPoint(x: width/2, y: height/2))
         context.addLine(to: CGPoint(x: width/2, y: height/2))
@@ -212,18 +217,5 @@ class DrawViewController: UIViewController {
         UIGraphicsEndImageContext()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let settings = segue.destination as? SettingsViewController else { return }
-        settings.delegate = self
-    }
     
-}
-
-// Make sure that the view conforms to the new protocol
-// And do what you want with the data
-extension DrawViewController: SettingsBackButtonDelegate {
-    func settingsSaved(newColor: UIColor, newBrush: CGFloat) {
-        brushWidth = newBrush
-        color = newColor
-    }
 }

@@ -24,6 +24,7 @@ extension DrawViewController: UICollectionViewDelegate {
         blue = colors[2] * 255.0
         blueSlider.value = Float(colors[2] * 255.0)
         blueLabel.text = String(format: "%1.f", blue)
+        opacity = 1.0
         drawPreview(image: pencilImageView)
     }
 }
