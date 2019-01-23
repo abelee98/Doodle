@@ -30,26 +30,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fPM-Ba-y4h">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="422.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="422.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyy-Va-Cfh">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="332.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="332.5"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6si-p0-J1t">
-                                                            <rect key="frame" x="0.0" y="342.5" width="375" height="30"/>
+                                                            <rect key="frame" x="0.0" y="342.5" width="414" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gze-OT-rWO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="30"/>
                                                                     <state key="normal" title="Like"/>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6Y-6u-9Fn">
-                                                                    <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                                                    <rect key="frame" x="207" y="0.0" width="207" height="30"/>
                                                                     <state key="normal" title="Edit"/>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ey-xB-hLe">
-                                                            <rect key="frame" x="0.0" y="382.5" width="375" height="40"/>
+                                                            <rect key="frame" x="0.0" y="382.5" width="414" height="40"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -259,6 +259,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9c-Q9-qL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821.60000000000002" y="-872.66009852216757"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="pDc-HB-XBe">
+            <objects>
+                <viewController id="a0j-oS-DQT" customClass="LoginViewController" customModule="Doodle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2NO-Pt-ODR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4E-Ws-zDT">
+                                <rect key="frame" x="184" y="412" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="b:" destination="a0j-oS-DQT" eventType="touchUpInside" id="M9w-RB-8lh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZP9-pO-5pX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="px2-TP-4im" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-981.15942028985512" y="-539.0625"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xHd-yP-zxc">

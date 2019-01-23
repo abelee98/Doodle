@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B7D5248A162A0A8F780FB659 /* Pods_Doodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF91EAF9370C6F7F1B21D60E /* Pods_Doodle.framework */; };
+		CB3502AC21F923BF00CD37C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3502AB21F923BF00CD37C9 /* Users.swift */; };
 		CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377821EFC7F6002050F8 /* HomeCell.swift */; };
 		CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377C21F12888002050F8 /* DrawViewController.swift */; };
 		CB39C12421F55CFE00BE2D5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */; };
@@ -28,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1BFD46C3BB7B9DB7C8498217 /* Pods-Doodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doodle/Pods-Doodle.release.xcconfig"; sourceTree = "<group>"; };
+		A1A1CD8C12B7846DDFAD54AA /* Pods-Doodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodle/Pods-Doodle.debug.xcconfig"; sourceTree = "<group>"; };
+		CB3502AB21F923BF00CD37C9 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		CB38377821EFC7F6002050F8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		CB38377C21F12888002050F8 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 		CBF9E7D421EFB21400180272 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HVCExtension-TableViewDataSource.swift"; sourceTree = "<group>"; };
 		CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HVCExtension-TableViewDelegate.swift"; sourceTree = "<group>"; };
+		CF91EAF9370C6F7F1B21D60E /* Pods_Doodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +61,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7D5248A162A0A8F780FB659 /* Pods_Doodle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2EC5383F4E62760EDF28A1DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF91EAF9370C6F7F1B21D60E /* Pods_Doodle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CE17506A353CDB4CCC23AA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1A1CD8C12B7846DDFAD54AA /* Pods-Doodle.debug.xcconfig */,
+				1BFD46C3BB7B9DB7C8498217 /* Pods-Doodle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CB3502AD21F9261A00CD37C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CB3502AB21F923BF00CD37C9 /* Users.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CBF9E7A121EE8CCF00180272 = {
 			isa = PBXGroup;
 			children = (
 				CBF9E7AC21EE8CCF00180272 /* Doodle */,
 				CBF9E7AB21EE8CCF00180272 /* Products */,
+				6CE17506A353CDB4CCC23AA2 /* Pods */,
+				2EC5383F4E62760EDF28A1DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +115,7 @@
 		CBF9E7AC21EE8CCF00180272 /* Doodle */ = {
 			isa = PBXGroup;
 			children = (
+				CB3502AD21F9261A00CD37C9 /* Models */,
 				CBF9E7C521EE8D4300180272 /* Supporting Files */,
 				CBF9E7C221EE8D0A00180272 /* Controllers */,
 				CBF9E7C121EE8D0300180272 /* ViewModels */,
@@ -150,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CBF9E7BC21EE8CD100180272 /* Build configuration list for PBXNativeTarget "Doodle" */;
 			buildPhases = (
+				102A8C02C3571F8729D5C880 /* [CP] Check Pods Manifest.lock */,
 				CBF9E7A621EE8CCF00180272 /* Sources */,
 				CBF9E7A721EE8CCF00180272 /* Frameworks */,
 				CBF9E7A821EE8CCF00180272 /* Resources */,
+				A97FED48BF6AA73CE7AB46A5 /* [CP] Embed Pods Frameworks */,
+				68148F69D23376E611137FE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +248,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		102A8C02C3571F8729D5C880 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Doodle-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68148F69D23376E611137FE9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Doodle/Pods-Doodle-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doodle/Pods-Doodle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A97FED48BF6AA73CE7AB46A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Doodle/Pods-Doodle-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MongoMobile/MongoMobile.framework",
+				"${BUILT_PRODUCTS_DIR}/MongoSwift/MongoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/StitchCore/StitchCore.framework",
+				"${BUILT_PRODUCTS_DIR}/StitchCoreLocalMongoDBService/StitchCoreLocalMongoDBService.framework",
+				"${BUILT_PRODUCTS_DIR}/StitchCoreRemoteMongoDBService/StitchCoreRemoteMongoDBService.framework",
+				"${BUILT_PRODUCTS_DIR}/StitchCoreSDK/StitchCoreSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/StitchLocalMongoDBService/StitchLocalMongoDBService.framework",
+				"${BUILT_PRODUCTS_DIR}/StitchRemoteMongoDBService/StitchRemoteMongoDBService.framework",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/bson.framework.dSYM",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework",
+				"${PODS_ROOT}/mongo-embedded-c-driver/iPhoneOS/Frameworks/mongoc.framework.dSYM",
+				"${PODS_ROOT}/mongo_embedded/iPhoneOS/Frameworks/mongo_embedded.framework",
+				"${PODS_ROOT}/mongo_embedded/iPhoneOS/Frameworks/mongo_embedded.framework.dSYM",
+				"${PODS_ROOT}/mongoc_embedded/iPhoneOS/Frameworks/mongoc_embedded.framework",
+				"${PODS_ROOT}/mongoc_embedded/iPhoneOS/Frameworks/mongoc_embedded.framework.dSYM",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MongoMobile.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MongoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StitchCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StitchCoreLocalMongoDBService.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StitchCoreRemoteMongoDBService.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StitchCoreSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StitchLocalMongoDBService.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StitchRemoteMongoDBService.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bson.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/bson.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mongoc.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/mongoc.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mongo_embedded.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/mongo_embedded.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mongoc_embedded.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/mongoc_embedded.framework.dSYM",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doodle/Pods-Doodle-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CBF9E7A621EE8CCF00180272 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -222,6 +366,7 @@
 				CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */,
 				CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */,
 				CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */,
+				CB3502AC21F923BF00CD37C9 /* Users.swift in Sources */,
 				CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */,
 				CBF9E7D721EFB27700180272 /* HVCExtension-TableViewDataSource.swift in Sources */,
 				CBEE33E621F3E17500AD7447 /* DVCExtension+CollectionViewDelegate.swift in Sources */,
@@ -309,6 +454,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -363,6 +509,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -372,6 +519,7 @@
 		};
 		CBF9E7BD21EE8CD100180272 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1A1CD8C12B7846DDFAD54AA /* Pods-Doodle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -392,6 +540,7 @@
 		};
 		CBF9E7BE21EE8CD100180272 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BFD46C3BB7B9DB7C8498217 /* Pods-Doodle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
