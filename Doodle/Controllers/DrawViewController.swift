@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import StitchCore
+import StitchCoreRemoteMongoDBService
+import StitchRemoteMongoDBService
 
 class DrawViewController: UIViewController {
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
+    private lazy var client = Stitch.defaultAppClient!
     
     var prevImageView = [UIImageView]()
     
@@ -109,9 +113,19 @@ class DrawViewController: UIViewController {
         tempImageView.image = nil
     }
     
-    @IBAction func donePressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
+    @IBAction func savePressed(_ sender: Any) {
+        client.auth.logout { (result) in
+            print(result)
+        }
+        if !client.auth.isLoggedIn {
+            print("not logged in")
+            guard let login = self.storyboard?.instantiateViewController(withIdentifier: "login") else { return }
+            present(login, animated: true, completion: nil)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
     @IBAction func resetPressed(_ sender: Any) {
         prevImageView.append(UIImageView(image: mainImageView.image))
@@ -126,6 +140,7 @@ class DrawViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func colorPressed(_ sender: Any) {
+        print("color pressed")
         drawPreview(image: pencilImageView)
         if colorViewConstraint.constant == -400 {
             colorViewConstraint.constant = 50

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension HomeViewContoller: UITableViewDataSource {
+extension FeedViewContoller: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3

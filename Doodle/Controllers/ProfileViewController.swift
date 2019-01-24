@@ -10,6 +10,9 @@
 
 
 import UIKit
+import StitchCore
+import StitchCoreRemoteMongoDBService
+import StitchRemoteMongoDBService
 
 class ProfileViewController: UIViewController {
 
@@ -18,25 +21,26 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var doodles: UILabel!
     @IBOutlet weak var edited: UILabel!
     @IBOutlet weak var userDoodles: UICollectionView!
+    private lazy var client = Stitch.defaultAppClient!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // have to define the datasource and delegate 
+        if !client.auth.isLoggedIn {
+            //Do something
+            guard let login = self.storyboard?.instantiateViewController(withIdentifier: "login") else { return }
+            print("in here")
+            self.tabBarController?.present(login, animated: true, completion: nil)
+        } else {
+            // Logged in
+        }
+        // have to define the datasource and delegate
         userDoodles.dataSource = self
         userDoodles.delegate = self
         profileImage.layer.cornerRadius = 75
         profileImage.layer.masksToBounds = false
         profileImage.clipsToBounds = true
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let navController = segue.destination as? UINavigationController,
-            let settingsController = navController.topViewController as? DrawViewController else {
-                return
-        }
-        print("in segue")
     }
 }
 

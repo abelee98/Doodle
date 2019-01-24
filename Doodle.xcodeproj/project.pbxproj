@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B7D5248A162A0A8F780FB659 /* Pods_Doodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF91EAF9370C6F7F1B21D60E /* Pods_Doodle.framework */; };
 		CB3502AC21F923BF00CD37C9 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3502AB21F923BF00CD37C9 /* Users.swift */; };
+		CB3502B321F966B700CD37C9 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3502B221F966B700CD37C9 /* HomeCollectionViewController.swift */; };
 		CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377821EFC7F6002050F8 /* HomeCell.swift */; };
 		CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB38377C21F12888002050F8 /* DrawViewController.swift */; };
 		CB39C12421F55CFE00BE2D5D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */; };
@@ -24,7 +25,7 @@
 		CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */; };
 		CBF9E7C921EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */; };
 		CBF9E7CD21EF887700180272 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7CC21EF887700180272 /* ProfileCell.swift */; };
-		CBF9E7D521EFB21400180272 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D421EFB21400180272 /* HomeViewController.swift */; };
+		CBF9E7D521EFB21400180272 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D421EFB21400180272 /* FeedViewController.swift */; };
 		CBF9E7D721EFB27700180272 /* HVCExtension-TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */; };
 		CBF9E7D921EFB2D400180272 /* HVCExtension-TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		1BFD46C3BB7B9DB7C8498217 /* Pods-Doodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doodle/Pods-Doodle.release.xcconfig"; sourceTree = "<group>"; };
 		A1A1CD8C12B7846DDFAD54AA /* Pods-Doodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodle/Pods-Doodle.debug.xcconfig"; sourceTree = "<group>"; };
 		CB3502AB21F923BF00CD37C9 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		CB3502B221F966B700CD37C9 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		CB38377821EFC7F6002050F8 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		CB38377C21F12888002050F8 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
 		CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +52,7 @@
 		CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCExtension+CollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PVCExtension+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		CBF9E7CC21EF887700180272 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		CBF9E7D421EFB21400180272 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CBF9E7D421EFB21400180272 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HVCExtension-TableViewDataSource.swift"; sourceTree = "<group>"; };
 		CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HVCExtension-TableViewDelegate.swift"; sourceTree = "<group>"; };
 		CF91EAF9370C6F7F1B21D60E /* Pods_Doodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,17 +154,17 @@
 		CBF9E7C221EE8D0A00180272 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CBF9E7D421EFB21400180272 /* HomeViewController.swift */,
+				CBF9E7D421EFB21400180272 /* FeedViewController.swift */,
 				CBF9E7AF21EE8CCF00180272 /* ProfileViewController.swift */,
 				CBF9E7C621EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift */,
 				CBF9E7C821EEB0DC00180272 /* PVCExtension+CollectionViewDataSource.swift */,
-				CBF9E7CC21EF887700180272 /* ProfileCell.swift */,
 				CBF9E7D621EFB27700180272 /* HVCExtension-TableViewDataSource.swift */,
 				CBF9E7D821EFB2D400180272 /* HVCExtension-TableViewDelegate.swift */,
 				CB38377C21F12888002050F8 /* DrawViewController.swift */,
 				CBEE33E521F3E17500AD7447 /* DVCExtension+CollectionViewDelegate.swift */,
 				CBEE33E721F3E1C800AD7447 /* DVCExtension+CollectionViewDataSource.swift */,
 				CB39C12321F55CFE00BE2D5D /* LoginViewController.swift */,
+				CB3502B221F966B700CD37C9 /* HomeCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +177,7 @@
 				CBEE33DF21F2936B00AD7447 /* PencilColor.swift */,
 				CB38377821EFC7F6002050F8 /* HomeCell.swift */,
 				CBEE33E321F386FC00AD7447 /* ColorView.swift */,
+				CBF9E7CC21EF887700180272 /* ProfileCell.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				CBEE33E421F386FC00AD7447 /* ColorView.swift in Sources */,
 				CB38377D21F12888002050F8 /* DrawViewController.swift in Sources */,
 				CBF9E7B021EE8CCF00180272 /* ProfileViewController.swift in Sources */,
+				CB3502B321F966B700CD37C9 /* HomeCollectionViewController.swift in Sources */,
 				CBF9E7AE21EE8CCF00180272 /* AppDelegate.swift in Sources */,
 				CB3502AC21F923BF00CD37C9 /* Users.swift in Sources */,
 				CBF9E7C721EEB03500180272 /* PVCExtension+CollectionViewDelegate.swift in Sources */,
@@ -373,7 +377,7 @@
 				CB38377921EFC7F6002050F8 /* HomeCell.swift in Sources */,
 				CBEE33E821F3E1C800AD7447 /* DVCExtension+CollectionViewDataSource.swift in Sources */,
 				CBF9E7CD21EF887700180272 /* ProfileCell.swift in Sources */,
-				CBF9E7D521EFB21400180272 /* HomeViewController.swift in Sources */,
+				CBF9E7D521EFB21400180272 /* FeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
