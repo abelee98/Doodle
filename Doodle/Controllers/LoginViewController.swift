@@ -10,45 +10,49 @@ import UIKit
 import StitchCore
 import StitchCoreRemoteMongoDBService
 import StitchRemoteMongoDBService
+import GoogleSignIn
+import FacebookCore
+import FacebookLogin
 
-class LoginViewController: UIViewController {
-    private lazy var client = Stitch.defaultAppClient!
-    private var mongoClient: RemoteMongoClient?
-    private var itemsCollection: RemoteMongoCollection<Document>?
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
+
+    @IBOutlet weak var facebookLoginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mongoClient = client.serviceClient(
-            fromFactory: remoteMongoClientFactory, withName: "mongodb-atlas"
-        )
-        print("in login")
-//        let credential = UserAPIKeyCredential.init(withKey: "x0RsqbfN1umDyGHCYr1BCCBJEngWh6aSDOpS6oxJTJzxFYE5ebl8dgFtMdoHxA8x")
-//        client.auth.login(withCredential: credential) { result in
-//            switch result {
-//            case .success(let user):
-//                print("LOGGGEDDDD INNNNNN")
-//                print("logged in anonymous as user \(user.id)")
-//                DispatchQueue.main.async {
-//                    // update UI accordingly
-//                }
-//            case .failure(let error):
-//                print("Failed to log in: \(error)")
-//            }
-//        }
-        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance()?.signOut()
+        facebookLoginButton.layer.cornerRadius = 4
     }
-    @IBAction func b(_ sender: Any) {
-        let coll = mongoClient?.db("test").collection("testcol")
-        let options = RemoteFindOptions(
-            projection: ["_id": 0]
-        )
-        coll?.find(options: options).asArray({result in
-            switch result {
-                case .success(let data):
-                    print(data)
-                case .failure(let error):
-                    print(error)
+    
+    // Facebook Login Handler
+    @IBAction func facebookLoginClicked(_ sender: Any) {
+        let loginManager = LoginManager()
+        loginManager.logIn(readPermissions: [ .publicProfile ], viewController: self) { (loginResult) in
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(_,_, let accessToken):
+                let fbCredential = FacebookCredential.init(withAccessToken: accessToken.authenticationToken)
+                Stitch.defaultAppClient!.auth.login(withCredential: fbCredential) { result in
+                    switch result {
+                    case .success:
+                        print("success logging in to Facebook")
+                        self.navigationController?.popViewController(animated: true)
+                        self.dismiss(animated: true, completion: nil)
+                    case .failure(let error):
+                        print("failed logging in Stitch with Facebook. error: \(error)")
+                        LoginManager().logOut()
+                    }
+                }
+                print("Logged in!")
             }
-        })
+        }
+    }
+    @IBAction func cancelPressed(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }

@@ -122,8 +122,7 @@ class DrawViewController: UIViewController {
             guard let login = self.storyboard?.instantiateViewController(withIdentifier: "login") else { return }
             present(login, animated: true, completion: nil)
         } else {
-            self.navigationController?.popViewController(animated: true)
-            self.dismiss(animated: true, completion: nil)
+            print("saving image")
         }
         
     }
@@ -135,10 +134,7 @@ class DrawViewController: UIViewController {
         guard let prev = prevImageView.popLast() else { return }
         mainImageView.image = prev.image
     }
-    @IBAction func cancelPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-        self.dismiss(animated: true, completion: nil)
-    }
+
     @IBAction func colorPressed(_ sender: Any) {
         print("color pressed")
         drawPreview(image: pencilImageView)

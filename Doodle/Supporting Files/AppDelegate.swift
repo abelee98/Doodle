@@ -8,13 +8,14 @@
 
 import UIKit
 import StitchCore
+import MongoMobile
 import FacebookCore
+import FacebookLogin
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -30,13 +31,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // class for more details.
         }
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        GIDSignIn.sharedInstance().clientID = "999567127989-djkrlc1b4s8am05bdquk43pn5rjcm7pb.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance()?.serverClientID =  "999567127989-dgqe6v2v50rdjgq0kn5a5caig8okbun5.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("error received when logging in with Google: \(error.localizedDescription)")
+        } else {
+            guard let authCode = user.serverAuthCode else { print("auth code empty");return }
+            print(authCode)
+            let googleCredential = GoogleCredential.init(withAuthCode: authCode)
+            Stitch.defaultAppClient!.auth.login(withCredential: googleCredential) { result in
+                switch result {
+                case .success:
+                    print("successfully logged in with Google")
+                    
+                case .failure(let error):
+                    print("failed logging in Stitch with Google. error: \(error)")
+                    GIDSignIn.sharedInstance().signOut()
+                }
+            }
+        }
     }
-
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+    
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let google = GIDSignIn.sharedInstance().handle(url as URL?,
+                                                 sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+        let facebook = SDKApplicationDelegate.shared.application(app, open: url, options: options)
+        return google && facebook
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

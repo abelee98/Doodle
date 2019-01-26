@@ -34,6 +34,9 @@ class ProfileViewController: UIViewController {
             self.tabBarController?.present(login, animated: true, completion: nil)
         } else {
             // Logged in
+            client.auth.logout { (result) in
+                print(result)
+            }
         }
         // have to define the datasource and delegate
         userDoodles.dataSource = self
