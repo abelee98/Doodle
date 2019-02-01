@@ -10,7 +10,7 @@ import UIKit
 
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return 1
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

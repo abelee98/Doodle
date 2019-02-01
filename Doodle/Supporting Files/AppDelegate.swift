@@ -42,12 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("error received when logging in with Google: \(error.localizedDescription)")
         } else {
             guard let authCode = user.serverAuthCode else { print("auth code empty");return }
-            print(authCode)
             let googleCredential = GoogleCredential.init(withAuthCode: authCode)
             Stitch.defaultAppClient!.auth.login(withCredential: googleCredential) { result in
                 switch result {
                 case .success:
                     print("successfully logged in with Google")
+                    DispatchQueue.main.async {
+                        // Because you have to access the root view from the main thread
+                        self.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                    }
                     
                 case .failure(let error):
                     print("failed logging in Stitch with Google. error: \(error)")

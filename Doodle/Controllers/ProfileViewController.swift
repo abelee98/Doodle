@@ -26,18 +26,10 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         if !client.auth.isLoggedIn {
-            //Do something
             guard let login = self.storyboard?.instantiateViewController(withIdentifier: "login") else { return }
-            print("in here")
             self.tabBarController?.present(login, animated: true, completion: nil)
-        } else {
-            // Logged in
-            client.auth.logout { (result) in
-                print(result)
-            }
-        }
+        } 
         // have to define the datasource and delegate
         userDoodles.dataSource = self
         userDoodles.delegate = self
