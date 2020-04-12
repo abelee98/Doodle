@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/landing.dart';
 import 'widgets/signup.dart';
+import 'widgets/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Roboto',
       ),
-      home: Signup(),
+      home: Landing(),
     );
   }
 }

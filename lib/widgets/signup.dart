@@ -14,7 +14,7 @@ class Signup extends StatelessWidget {
         padding: EdgeInsets.only(left: ScreenUtil().setWidth(40.0), right: ScreenUtil().setWidth(40)),
         child: ListView(
           children: <Widget>[
-            Padding(padding: EdgeInsets.only(top: ScreenUtil().setWidth(70), bottom: ScreenUtil().setWidth(20)),
+            Padding(padding: EdgeInsets.only(top: ScreenUtil().setWidth(40), bottom: ScreenUtil().setWidth(10)),
               child: Text(
                 "Welcome!",
                 style: TextStyle(
@@ -38,7 +38,7 @@ class Signup extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.all(10.0),
+                        contentPadding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                         labelText: "Username",
                         labelStyle: TextStyle(fontSize: ScreenUtil().setSp(12.0), color: Colors.black)
                       ),
@@ -62,7 +62,7 @@ class Signup extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.all(10.0),
+                        contentPadding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                         labelText: "Email",
                         labelStyle: TextStyle(fontSize: ScreenUtil().setSp(12.0), color: Colors.black)
                       ),
@@ -86,7 +86,7 @@ class Signup extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.all(10.0),
+                        contentPadding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                         labelText: "Password",
                         labelStyle: TextStyle(fontSize: ScreenUtil().setSp(12.0), color: Colors.black)
                       ),
@@ -110,7 +110,7 @@ class Signup extends StatelessWidget {
                     TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.all(10.0),
+                        contentPadding: EdgeInsets.all(ScreenUtil().setWidth(10.0)),
                         labelText: "Password",
                         labelStyle: TextStyle(fontSize: ScreenUtil().setSp(12.0), color: Colors.black)
                       ),
@@ -124,7 +124,7 @@ class Signup extends StatelessWidget {
               width: ScreenUtil().setWidth(300),
               height: ScreenUtil().setHeight(50),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
+                borderRadius: BorderRadius.circular(ScreenUtil().setWidth(25)),
                 color: Colors.black,
               ),
               child:Center(
@@ -152,7 +152,7 @@ class Signup extends StatelessWidget {
               width: ScreenUtil().setWidth(300),
               height: ScreenUtil().setHeight(50),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
+                borderRadius: BorderRadius.circular(ScreenUtil().setWidth(25)),
                 color: Color(0xff0061d2)
               ),
               child:Center(
@@ -170,7 +170,7 @@ class Signup extends StatelessWidget {
               width: ScreenUtil().setWidth(300),
               height: ScreenUtil().setHeight(50),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25.0),
+                borderRadius: BorderRadius.circular(ScreenUtil().setWidth(25)),
                 color:  Color(0xffda001b),
               ),
               child:Center(

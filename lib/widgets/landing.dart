@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:doodle/widgets/signup.dart';
+import 'package:doodle/widgets/login.dart';
 
 class Landing extends StatelessWidget {
   @override
@@ -42,14 +43,21 @@ class Landing extends StatelessWidget {
                             fontSize: ScreenUtil().setSp(20),
                             fontWeight: FontWeight.bold
                           ),
-                          ),
-                        Text(
-                          "LOG IN",
-                          style: TextStyle(
-                            fontSize: ScreenUtil().setSp(10),
-                            fontWeight: FontWeight.bold
-                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () => {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                              return Login();
+                            }))
+                          },
+                          child: Text(
+                            "LOG IN",
+                            style: TextStyle(
+                              fontSize: ScreenUtil().setSp(10),
+                              fontWeight: FontWeight.bold
+                            ),
                           )
+                        )
                       ],
                     ), 
                     Column(
@@ -68,22 +76,29 @@ class Landing extends StatelessWidget {
                           )
                       ),
                       SizedBox(height: ScreenUtil().setHeight(40)),
-                      Container(
-                        width: ScreenUtil().setWidth(300),
-                        height: ScreenUtil().setHeight(50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25.0),
-                          color: Colors.black,
-                        ),
-                        child:Center(
-                          child: Text(
-                              "SIGN UP",
-                              style: TextStyle(
-                                fontSize: ScreenUtil().setSp(10),
-                                color: Colors.white
+                      GestureDetector(
+                        onTap: () => {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+                            return Signup();
+                          }))
+                        },
+                        child:Container(
+                          width: ScreenUtil().setWidth(300),
+                          height: ScreenUtil().setHeight(50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(ScreenUtil().setWidth(25)),
+                            color: Colors.black,
+                          ),
+                          child:Center(
+                            child: Text(
+                                "SIGN UP",
+                                style: TextStyle(
+                                  fontSize: ScreenUtil().setSp(10),
+                                  color: Colors.white
+                                ),
                               ),
-                            ),
-                        ) 
+                          ) 
+                        )
                       )
                     ],)
                   ],
