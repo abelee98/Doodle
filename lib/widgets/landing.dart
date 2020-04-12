@@ -20,7 +20,7 @@ class Landing extends StatelessWidget {
             child: ClipPath(
               clipper: BackgroundClipper(),
               child: Container(
-                color: Color.fromARGB(100, 232, 243, 255)
+                color: Color(0xffe0efff)
                 // color: Colors.red
               ),
             )
