@@ -25,6 +25,7 @@ class CustomAppBar extends StatelessWidget {
           "Forgot Password?",
           style: TextStyle(
             fontSize: ScreenUtil().setSp(10),
+            fontWeight: FontWeight.bold,
           ),
         )
       ],

@@ -15,6 +15,7 @@ class Login extends StatelessWidget {
         padding: EdgeInsets.only(left: ScreenUtil().setWidth(20.0), right: ScreenUtil().setWidth(20)),
         child: ListView(
           children: <Widget>[
+            SizedBox(height: ScreenUtil().setWidth(10)),
             CustomAppBar(),
             Padding(padding: EdgeInsets.only(left:ScreenUtil().setWidth(20), right: ScreenUtil().setWidth(20), top: ScreenUtil().setWidth(70), bottom: ScreenUtil().setWidth(5)),
               child: Text(
