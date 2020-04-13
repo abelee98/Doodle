@@ -70,8 +70,8 @@ class Login extends StatelessWidget {
                     width: ScreenUtil().setWidth(20),
                     height: ScreenUtil().setWidth(20),
                   ),
-                  Flexible(child: 
-                    TextField(
+                  Flexible(
+                    child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.all(10.0),
@@ -86,8 +86,11 @@ class Login extends StatelessWidget {
             SizedBox(height: ScreenUtil().setWidth(30)),
             Padding(
               padding: EdgeInsets.only(left:ScreenUtil().setWidth(20), right: ScreenUtil().setWidth(20)),
-              child:
-                Container(
+              child: GestureDetector(
+                onTap: () => {
+                  Navigator.of(context).pushNamedAndRemoveUntil('/feed', (route) => false)
+                },
+                child: Container(
                   width: ScreenUtil().setWidth(300),
                   height: ScreenUtil().setHeight(50),
                   decoration: BoxDecoration(
@@ -95,15 +98,17 @@ class Login extends StatelessWidget {
                     color: Color(0xff0061d2),
                   ),
                   child:Center(
+                    
                     child: Text(
-                        "LOGIN",
-                        style: TextStyle(
-                          fontSize: ScreenUtil().setSp(10),
-                          color: Colors.white
-                        ),
+                      "LOGIN",
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(10),
+                        color: Colors.white
                       ),
+                    ),
                   ) 
                 ),
+              ),
             ),
             SizedBox(height: ScreenUtil().setWidth(15)),
             Center(
@@ -118,8 +123,11 @@ class Login extends StatelessWidget {
             SizedBox(height: ScreenUtil().setWidth(15)),
             Padding(
               padding: EdgeInsets.only(left:ScreenUtil().setWidth(20), right: ScreenUtil().setWidth(20)),
-              child:
-                Container(
+              child: GestureDetector(
+                onTap: () => {
+                  Navigator.of(context).pushReplacementNamed('/signup')
+                },
+                child: Container(
                   width: ScreenUtil().setWidth(300),
                   height: ScreenUtil().setHeight(50),
                   decoration: BoxDecoration(
@@ -136,6 +144,7 @@ class Login extends StatelessWidget {
                       ),
                   ) 
                 )
+              )
             )
           ],
         ),

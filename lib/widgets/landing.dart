@@ -46,9 +46,7 @@ class Landing extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () => {
-                              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                              return Login();
-                            }))
+                              Navigator.of(context).pushNamed('/login')
                           },
                           child: Text(
                             "LOG IN",
@@ -78,9 +76,7 @@ class Landing extends StatelessWidget {
                       SizedBox(height: ScreenUtil().setHeight(40)),
                       GestureDetector(
                         onTap: () => {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-                            return Signup();
-                          }))
+                          Navigator.of(context).pushNamed('/signup')
                         },
                         child:Container(
                           width: ScreenUtil().setWidth(300),

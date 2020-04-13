@@ -1,6 +1,5 @@
+import 'package:doodle/routeGenerator.dart';
 import 'package:flutter/material.dart';
-import 'widgets/landing.dart';
-import 'widgets/post.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +15,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         fontFamily: 'Roboto',
       ),
-      home: Post(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
+      // home: Feed(),
     );
   }
 }
