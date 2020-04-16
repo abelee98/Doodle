@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doodle/postIcons.dart';
+import 'package:doodle/models/postData.dart';
 
 class Post extends StatefulWidget {
-  Post({Key key}) : super(key: key);
+  final PostData postData;
+
+  Post({Key key, @required this.postData}) : super(key: key);
 
   @override
   _PostState createState() => _PostState();
@@ -15,6 +18,9 @@ class _PostState extends State<Post> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
+    final currentDate = DateTime.now();
+    final postDate = DateTime.parse(widget.postData.time);
+    Duration change = currentDate.difference(postDate);
 
     return Column(children: <Widget>[
       Row(
@@ -25,7 +31,7 @@ class _PostState extends State<Post> {
               height: ScreenUtil().setWidth(40),
               width: ScreenUtil().setWidth(40),
               child: ClipOval(
-                child: Image.asset("assets/people/joanne.png", fit: BoxFit.cover,),
+                child: Image.asset(widget.postData.profilePicURL, fit: BoxFit.cover,),
               ),
             ),
             SizedBox(width: ScreenUtil().setWidth(10),),
@@ -33,14 +39,14 @@ class _PostState extends State<Post> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Joanne Smith",
+                  widget.postData.firstName + " " + widget.postData.lastName,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: ScreenUtil().setSp(15),
                   ),
                 ),
                 Text(
-                  "6 mins ago",
+                  change.inMinutes.toString(),
                   style: TextStyle(
                     fontSize: ScreenUtil().setSp(12),
                     color: Color(0xff9b9b9b)
@@ -62,7 +68,7 @@ class _PostState extends State<Post> {
         child: SizedBox(
           height: ScreenUtil().setHeight(245),
           width: ScreenUtil().setWidth(335),
-          child: Image.asset("assets/drawings/portrait.jpeg", fit: BoxFit.cover),
+          child: Image.asset(widget.postData.photoURL, fit: BoxFit.cover),
         )
       ),
       Padding(
@@ -87,7 +93,7 @@ class _PostState extends State<Post> {
                       }),
                   SizedBox(width: ScreenUtil().setWidth(10)),
                   Text(
-                    "23",
+                    widget.postData.snaps.toString(),
                     style: TextStyle(
                       fontSize: ScreenUtil().setSp(11),
                       color: Color(0xff9b9b9b)
@@ -100,7 +106,7 @@ class _PostState extends State<Post> {
           ),
           SizedBox(height: ScreenUtil().setHeight(10)),
           Text(
-            "Check out this drawing! Feel free to add your own ideas!",
+            widget.postData.comment,
             style: TextStyle(
               fontSize: ScreenUtil().setSp(15),
               fontWeight: FontWeight.w300
@@ -126,7 +132,7 @@ class _PostState extends State<Post> {
                 ),
               ),
               Text(
-                "10",
+                widget.postData.commentCount.toString(),
                 style: TextStyle(
                   fontSize: ScreenUtil().setSp(11),
                   fontWeight: FontWeight.bold,
