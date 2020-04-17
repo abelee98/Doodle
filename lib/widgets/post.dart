@@ -15,6 +15,18 @@ class Post extends StatefulWidget {
 class _PostState extends State<Post> {
   bool snapped = false;
 
+  String handleTimeChange(Duration change, DateTime postDate) {
+    if (change.inMinutes <= 60) {
+      return change.inMinutes.toString() + " mins ago";
+    } else if (change.inHours <= 24) {
+      return change.inHours.toString() + " hours ago";
+    } else if (change.inDays <= 7) {
+      return change.inDays.toString() + " days ago";
+    } else {
+      return postDate.month.toString() + " " + postDate.day.toString() + " " + postDate.year.toString();
+    }
+  } 
+
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
@@ -23,57 +35,58 @@ class _PostState extends State<Post> {
     Duration change = currentDate.difference(postDate);
 
     return Column(children: <Widget>[
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Row(children: <Widget>[
-            SizedBox(
-              height: ScreenUtil().setWidth(40),
-              width: ScreenUtil().setWidth(40),
-              child: ClipOval(
-                child: Image.asset(widget.postData.profilePicURL, fit: BoxFit.cover,),
-              ),
-            ),
-            SizedBox(width: ScreenUtil().setWidth(10),),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  widget.postData.firstName + " " + widget.postData.lastName,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: ScreenUtil().setSp(15),
+      Padding(
+        padding: EdgeInsets.only(left: ScreenUtil().setWidth(20), right: ScreenUtil().setWidth(20), top: ScreenUtil().setHeight(10)),
+        child: Column(children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Row(children: <Widget>[
+                SizedBox(
+                  height: ScreenUtil().setWidth(40),
+                  width: ScreenUtil().setWidth(40),
+                  child: ClipOval(
+                    child: Image.asset(widget.postData.profilePicURL, fit: BoxFit.cover,),
                   ),
                 ),
-                Text(
-                  change.inMinutes.toString(),
-                  style: TextStyle(
-                    fontSize: ScreenUtil().setSp(12),
-                    color: Color(0xff9b9b9b)
-                  ),
-                )
-              ],
-            ), 
-          ],),
-          SizedBox(
-            height: ScreenUtil().setHeight(35),
-            width: ScreenUtil().setWidth(35),
-            child: Icon(Icons.more_vert, color: Color(0xff9b9b9b))
+                SizedBox(width: ScreenUtil().setWidth(10),),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      widget.postData.firstName + " " + widget.postData.lastName,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: ScreenUtil().setSp(15),
+                      ),
+                    ),
+                    Text(
+                      handleTimeChange(change, postDate),
+                      style: TextStyle(
+                        fontSize: ScreenUtil().setSp(12),
+                        color: Color(0xff9b9b9b)
+                      ),
+                    )
+                  ],
+                ), 
+              ],),
+              SizedBox(
+                height: ScreenUtil().setHeight(35),
+                width: ScreenUtil().setWidth(35),
+                child: Icon(Icons.more_vert, color: Color(0xff9b9b9b))
+              ),
+            ],
           ),
-        ],
-      ),
-      SizedBox(height: ScreenUtil().setHeight(10)),
-      ClipRRect(
-        borderRadius: BorderRadius.circular(ScreenUtil().setWidth(25)),
-        child: SizedBox(
-          height: ScreenUtil().setHeight(245),
-          width: ScreenUtil().setWidth(335),
-          child: Image.asset(widget.postData.photoURL, fit: BoxFit.cover),
-        )
-      ),
-      Padding(
-        padding: EdgeInsets.all(ScreenUtil().setHeight(15)),
-        child: Column(children: <Widget>[
+          SizedBox(height: ScreenUtil().setHeight(10)),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(ScreenUtil().setWidth(25)),
+            child: SizedBox(
+              height: ScreenUtil().setHeight(245),
+              width: ScreenUtil().setWidth(335),
+              child: Image.asset(widget.postData.photoURL, fit: BoxFit.cover),
+            )
+          ),
+          SizedBox(height: ScreenUtil().setHeight(5)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -112,7 +125,6 @@ class _PostState extends State<Post> {
               fontWeight: FontWeight.w300
             ),
           ),
-          SizedBox(height: ScreenUtil().setHeight(10)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[

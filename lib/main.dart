@@ -1,7 +1,10 @@
 import 'package:doodle/routeGenerator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
+
   runApp(MyApp());
 }
 
@@ -17,7 +20,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
-      // home: Feed(),
     );
   }
 }

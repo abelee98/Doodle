@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:doodle/widgets/signup.dart';
-import 'package:doodle/widgets/login.dart';
+import 'package:flutter/services.dart';
 
 class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Width and Height set for iPhone xs
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
-    
-    return Scaffold(
+    return 
+    Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
