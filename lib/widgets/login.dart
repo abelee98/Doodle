@@ -88,7 +88,7 @@ class Login extends StatelessWidget {
               padding: EdgeInsets.only(left:ScreenUtil().setWidth(20), right: ScreenUtil().setWidth(20)),
               child: GestureDetector(
                 onTap: () => {
-                  Navigator.of(context).pushNamedAndRemoveUntil('/feed', (route) => false)
+                  Navigator.of(context).pushNamedAndRemoveUntil('/home', (route) => false)
                 },
                 child: Container(
                   width: ScreenUtil().setWidth(300),

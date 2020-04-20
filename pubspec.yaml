@@ -67,9 +67,9 @@ flutter:
           weight: 700
         - asset: fonts/Roboto-Light.ttf
           weight: 300
-    - family:  Post
+    - family:  Custom
       fonts:
-        - asset: assets/icons/post.ttf
+        - asset: fonts/Custom.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

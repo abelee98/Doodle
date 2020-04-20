@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:doodle/postIcons.dart';
 import 'package:doodle/models/postData.dart';
+import 'package:doodle/customIcons.dart';
 
 class Post extends StatefulWidget {
   final PostData postData;
@@ -95,7 +95,7 @@ class _PostState extends State<Post> {
                 children: <Widget>[
                   InkWell(
                       child: Icon(
-                          PostIcons.snap, 
+                          CustomIcons.snap, 
                           color: snapped ? Colors.red : Colors.black, 
                           size: ScreenUtil().setWidth(20)
                         ), 
@@ -114,7 +114,7 @@ class _PostState extends State<Post> {
                   )
                 ],
               ),
-              Icon(PostIcons.pencil, color: Colors.black, size: ScreenUtil().setWidth(15)),
+              Icon(CustomIcons.pencil, color: Colors.black, size: ScreenUtil().setWidth(15)),
             ],
           ),
           SizedBox(height: ScreenUtil().setHeight(10)),

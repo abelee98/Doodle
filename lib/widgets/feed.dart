@@ -17,45 +17,37 @@ class _FeedState extends State<Feed> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
     List<PostData> pdList = [PostData("jsmith", "Joanne", "Smith", "assets/people/joanne.png", "assets/drawings/portrait.jpeg", 23, "Check out this drawing! Feel free to add your own edits!", 10, "2020-04-15 20:18:04Z"), PostData("jsmith", "Joanne", "Smith", "assets/people/joanne.png", "assets/drawings/portrait.jpeg", 23, "Check out this drawing! Feel free to add your own edits!", 10, "2020-04-15 20:18:04Z"), PostData("jsmith", "Joanne", "Smith", "assets/people/joanne.png", "assets/drawings/portrait.jpeg", 23, "Check out this drawing! Feel free to add your own edits!", 10, "2020-04-15 20:18:04Z")];
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.dark,
-      child: Scaffold(
-        body: WillPopScope(
-          onWillPop: () async => false,
-          child: SafeArea(
-            child: CustomScrollView(
-              slivers: <Widget>[
-                SliverAppBar(
-                  floating: true,
-                  flexibleSpace: FlexibleSpaceBar(
-                    title: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        SizedBox(width: ScreenUtil().setWidth(20)),
-                        Text(
-                          "doodle",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: ScreenUtil().setSp(20)
-                          ),
-                        ),
-                      ],
+    return SafeArea(
+      child: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            floating: true,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(width: ScreenUtil().setWidth(20)),
+                  Text(
+                    "doodle",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: ScreenUtil().setSp(20)
                     ),
                   ),
-                  backgroundColor: Color(0xfffafafa),
-                  brightness: Brightness.light,
-                ),
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) => Post(postData: pdList[index]),
-                    childCount: pdList.length,
-                  ),
-                )
-              ],
+                ],
+              ),
+            ),
+            backgroundColor: Color(0xfffafafa),
+            brightness: Brightness.light,
+          ),
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => Post(postData: pdList[index]),
+              childCount: pdList.length,
             ),
           )
-        )
+        ],
       )
     );
   }

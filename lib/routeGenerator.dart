@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'widgets/landing.dart';
 import 'widgets/signup.dart';
 import 'widgets/login.dart';
+import 'widgets/home.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -17,6 +18,8 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => Login());
       case '/feed':
         return MaterialPageRoute(builder: (_) => Feed());
+      case '/home':
+        return MaterialPageRoute(builder:  (_) => Home());
       default:
         return _errorRoute();
     }
