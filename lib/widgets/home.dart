@@ -1,3 +1,4 @@
+import 'package:doodle/models/profileData.dart';
 import 'package:flutter/material.dart';
 import 'package:doodle/customIcons.dart';
 import 'feed.dart';
@@ -15,7 +16,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
-  final List<Widget> _children = [Feed(), Explore(), Draw(), Notifications(), Profile()];
+  final List<Widget> _children = [Feed(), Explore(), Draw(), Notifications(), Profile(profileData: ProfileData("assets/profile/profileSplash.jpeg", "assets/people/sam.png", "sam_smith", "Sam", "Smith", "Seattle, WA", 1, 2, 3, ["assets/landing2.jpeg", "assets/landing3.jpeg", "assets/drawings/portrait.jpeg"]))];
 
   void onTabTapped(int index) {
     setState(() {
